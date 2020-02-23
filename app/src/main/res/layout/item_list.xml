@@ -8,8 +8,7 @@ too. layout_gravity="center_horizontal" is a lot simpler.
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/root_layout"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    >
+    android:layout_height="wrap_content">
 
     <View
         android:id="@+id/header"
