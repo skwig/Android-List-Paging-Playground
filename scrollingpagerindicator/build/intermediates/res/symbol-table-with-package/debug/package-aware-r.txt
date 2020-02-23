@@ -1,0 +1,12 @@
+ru.tinkoff.scrollingpagerindicator
+attr spi_dotColor
+attr spi_dotMinimumSize
+attr spi_dotSelectedColor
+attr spi_dotSelectedSize
+attr spi_dotSize
+attr spi_dotSpacing
+attr spi_looped
+attr spi_visibleDotCount
+attr spi_visibleDotThreshold
+style ScrollingPagerIndicator
+styleable ScrollingPagerIndicator spi_dotColor spi_dotMinimumSize spi_dotSelectedColor spi_dotSelectedSize spi_dotSize spi_dotSpacing spi_looped spi_visibleDotCount spi_visibleDotThreshold

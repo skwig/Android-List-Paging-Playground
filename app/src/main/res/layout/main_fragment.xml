@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -39,14 +38,24 @@
                 android:backgroundTint="@color/toolbar_title_color" />
         </FrameLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/paging_indicator_recycler_view"
-            android:layout_width="match_parent"
+        <ru.tinkoff.scrollingpagerindicator.ScrollingPagerIndicator
+            android:id="@+id/indicator"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:clipToPadding="false"
-            tools:orientation="horizontal"
-            tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/item_paging_indicator" />
+            android:layout_gravity="center"
+            android:layout_marginBottom="8dp"
+            app:spi_dotColor="@color/colorPrimaryDark"
+            app:spi_dotSelectedColor="@color/colorPrimaryDark"
+            />
+
+        <!--        <androidx.recyclerview.widget.RecyclerView-->
+        <!--            android:id="@+id/paging_indicator_recycler_view"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:clipToPadding="false"-->
+        <!--            tools:orientation="horizontal"-->
+        <!--            tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+        <!--            tools:listitem="@layout/item_paging_indicator" />-->
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -58,17 +67,17 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:listitem="@layout/item_list" />
 
-<!--    <com.nikhilpanju.fabfilter.filter.FiltersLayout-->
-<!--        android:id="@+id/filters_layout"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:visibility="gone" />-->
+    <!--    <com.nikhilpanju.fabfilter.filter.FiltersLayout-->
+    <!--        android:id="@+id/filters_layout"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:visibility="gone" />-->
 
-<!--    <com.nikhilpanju.fabfilter.filter.FiltersMotionLayout-->
-<!--        android:id="@+id/filters_motion_layout"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:visibility="gone"-->
-<!--        app:layoutDescription="@xml/scene_filter" />-->
+    <!--    <com.nikhilpanju.fabfilter.filter.FiltersMotionLayout-->
+    <!--        android:id="@+id/filters_motion_layout"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:visibility="gone"-->
+    <!--        app:layoutDescription="@xml/scene_filter" />-->
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

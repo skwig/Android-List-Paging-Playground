@@ -1,0 +1,25 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/matej/Projects/StudioProjects/PagingTest/scrollingpagerindicator/src/main/AndroidManifest.xml:1:1-58
+INJECTED from /home/matej/Projects/StudioProjects/PagingTest/scrollingpagerindicator/src/main/AndroidManifest.xml:1:1-58
+INJECTED from /home/matej/Projects/StudioProjects/PagingTest/scrollingpagerindicator/src/main/AndroidManifest.xml:1:1-58
+	package
+		ADDED from /home/matej/Projects/StudioProjects/PagingTest/scrollingpagerindicator/src/main/AndroidManifest.xml:1:11-55
+		INJECTED from /home/matej/Projects/StudioProjects/PagingTest/scrollingpagerindicator/src/main/AndroidManifest.xml
+		INJECTED from /home/matej/Projects/StudioProjects/PagingTest/scrollingpagerindicator/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/matej/Projects/StudioProjects/PagingTest/scrollingpagerindicator/src/main/AndroidManifest.xml:1:1-58
+uses-sdk
+INJECTED from /home/matej/Projects/StudioProjects/PagingTest/scrollingpagerindicator/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/matej/Projects/StudioProjects/PagingTest/scrollingpagerindicator/src/main/AndroidManifest.xml
+INJECTED from /home/matej/Projects/StudioProjects/PagingTest/scrollingpagerindicator/src/main/AndroidManifest.xml
+INJECTED from /home/matej/Projects/StudioProjects/PagingTest/scrollingpagerindicator/src/main/AndroidManifest.xml
+INJECTED from /home/matej/Projects/StudioProjects/PagingTest/scrollingpagerindicator/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/matej/Projects/StudioProjects/PagingTest/scrollingpagerindicator/src/main/AndroidManifest.xml
+		ADDED from /home/matej/Projects/StudioProjects/PagingTest/scrollingpagerindicator/src/main/AndroidManifest.xml
+		INJECTED from /home/matej/Projects/StudioProjects/PagingTest/scrollingpagerindicator/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/matej/Projects/StudioProjects/PagingTest/scrollingpagerindicator/src/main/AndroidManifest.xml
+		ADDED from /home/matej/Projects/StudioProjects/PagingTest/scrollingpagerindicator/src/main/AndroidManifest.xml
+		INJECTED from /home/matej/Projects/StudioProjects/PagingTest/scrollingpagerindicator/src/main/AndroidManifest.xml

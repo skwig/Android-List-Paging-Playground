@@ -10,10 +10,13 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.appbar.AppBarLayout
+import ru.tinkoff.scrollingpagerindicator.ScrollingPagerIndicator
 import sk.skwig.pagingtest.MainListAdapter
 import sk.skwig.pagingtest.R
 import sk.skwig.pagingtest.ToolbarBehavior
 import sk.skwig.pagingtest.bindView
+
+
 
 class MainFragment : Fragment() {
 
@@ -50,7 +53,11 @@ class MainFragment : Fragment() {
         // RecyclerView Init
         mainListAdapter = MainListAdapter(requireContext())
         recyclerView.adapter = mainListAdapter
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        recyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         recyclerView.setHasFixedSize(true)
+
+        //
+        val recyclerIndicator = view.findViewById<ScrollingPagerIndicator>(R.id.indicator)
+        recyclerIndicator.attachToRecyclerView(recyclerView)
     }
 }

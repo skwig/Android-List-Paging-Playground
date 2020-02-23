@@ -1,0 +1,13 @@
+R_DEF: Internal format may change without notice
+local
+attr? spi_dotColor
+attr? spi_dotMinimumSize
+attr? spi_dotSelectedColor
+attr? spi_dotSelectedSize
+attr? spi_dotSize
+attr? spi_dotSpacing
+attr? spi_looped
+attr? spi_visibleDotCount
+attr? spi_visibleDotThreshold
+style ScrollingPagerIndicator
+styleable ScrollingPagerIndicator spi_dotColor spi_dotSelectedColor spi_dotSize spi_dotSelectedSize spi_dotMinimumSize spi_dotSpacing spi_visibleDotCount spi_visibleDotThreshold spi_looped

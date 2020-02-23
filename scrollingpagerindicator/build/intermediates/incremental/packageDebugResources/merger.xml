@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/home/matej/Projects/StudioProjects/PagingTest/scrollingpagerindicator/src/main/res"/><source path="/home/matej/Projects/StudioProjects/PagingTest/scrollingpagerindicator/build/generated/res/rs/debug"/><source path="/home/matej/Projects/StudioProjects/PagingTest/scrollingpagerindicator/build/generated/res/resValues/debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main" generated-set="main$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/home/matej/Projects/StudioProjects/PagingTest/scrollingpagerindicator/src/main/res"><file path="/home/matej/Projects/StudioProjects/PagingTest/scrollingpagerindicator/src/main/res/values/attrs.xml" qualifiers=""><declare-styleable name="ScrollingPagerIndicator">
+        <attr format="color" name="spi_dotColor"/>
+        <attr format="color" name="spi_dotSelectedColor"/>
+        <attr format="dimension" name="spi_dotSize"/>
+        <attr format="dimension" name="spi_dotSelectedSize"/>
+        <attr format="dimension" name="spi_dotMinimumSize"/>
+        <attr format="dimension" name="spi_dotSpacing"/>
+        <attr format="integer" name="spi_visibleDotCount"/>
+        <attr format="integer" name="spi_visibleDotThreshold"/>
+        <attr format="boolean" name="spi_looped"/>
+    </declare-styleable></file><file path="/home/matej/Projects/StudioProjects/PagingTest/scrollingpagerindicator/src/main/res/values/styles.xml" qualifiers=""><style name="ScrollingPagerIndicator">
+        <item name="spi_dotColor">@android:color/darker_gray</item>
+        <item name="spi_dotSelectedColor">@android:color/darker_gray</item>
+        <item name="spi_dotSize">6dp</item>
+        <item name="spi_dotSelectedSize">10dp</item>
+        <item name="spi_dotSpacing">8dp</item>
+        <item name="spi_visibleDotCount">5</item>
+        <item name="spi_visibleDotThreshold">2</item>
+        <item name="spi_looped">false</item>
+    </style></file></source><source path="/home/matej/Projects/StudioProjects/PagingTest/scrollingpagerindicator/build/generated/res/rs/debug"/><source path="/home/matej/Projects/StudioProjects/PagingTest/scrollingpagerindicator/build/generated/res/resValues/debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/home/matej/Projects/StudioProjects/PagingTest/scrollingpagerindicator/src/debug/res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug" generated-set="debug$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/home/matej/Projects/StudioProjects/PagingTest/scrollingpagerindicator/src/debug/res"/></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="ScrollingPagerIndicator">
+        <attr format="color" name="spi_dotColor"/>
+        <attr format="color" name="spi_dotSelectedColor"/>
+        <attr format="dimension" name="spi_dotSize"/>
+        <attr format="dimension" name="spi_dotSelectedSize"/>
+        <attr format="dimension" name="spi_dotMinimumSize"/>
+        <attr format="dimension" name="spi_dotSpacing"/>
+        <attr format="integer" name="spi_visibleDotCount"/>
+        <attr format="integer" name="spi_visibleDotThreshold"/>
+        <attr format="boolean" name="spi_looped"/>
+    </declare-styleable></configuration></mergedItems></merger>
