@@ -86,28 +86,21 @@ class MainFragment : Fragment() {
 //        recyclerIndicator.attachToRecyclerView(recyclerView)
 
 
-        val items = mainListAdapter.data.distinctBy { it.groupId }.map {
-            val initialOffset = 25
+        val items = mainListAdapter.data.distinctBy { it.groupBy }.map { TabItem(it.groupBy) }
 
-            val day = (initialOffset + it.groupId) % 30
-            val month = when ((initialOffset + it.groupId) / 30) {
-                0 -> "JAN"
-                1 -> "FEB"
-                2 -> "MAR"
-                3 -> "APR"
-                else -> TODO()
-            }
-
-            TabItem(SimpleDate(day, month))
-        }
-
-        tabsRecyclerView.updatePadding(right = (requireContext().screenWidth - tabItemWidth - filterLayoutPadding).toInt())
-        tabsRecyclerView.adapter = FiltersTabsAdapter(requireContext(), items) { clickedPosition ->
+        tabsRecyclerView.updatePadding(right = (requireContext().screenWidth - tabItemWidth - filterLayoutPadding).toInt()) // TODO: fix behavior at the end of the list
+        tabsRecyclerView.adapter = FiltersTabsAdapter(requireContext(), items) { clickedTab ->
+            Log.d("matej", "MainFragment.onViewCreated() called with: clickedTab = [$clickedTab]")
             // smoothScroll = true will call the onPageScrolled callback which will smoothly
             // animate (transform) the tabs accordingly
 
-//            viewPager.setCurrentItem(clickedPosition, true)
+            val pos = mainListAdapter.data.indexOfFirst { it.groupBy == clickedTab.date }
+            // TODO: -1 check?
+            // TODO: smoothScrollSoPositionIsFirst
+            recyclerView.smoothScrollToPosition(pos)
+//            (recyclerView.layoutManager as LinearLayoutManager).scrollToPositionWithOffset(pos, 0)
         }
+
         tabsRecyclerView.layoutManager = NoScrollHorizontalLayoutManager(requireContext())
 
         // Sync Tabs And Pager
@@ -150,8 +143,8 @@ class MainFragment : Fragment() {
         val current = mainListAdapter.data[position]
         val next = mainListAdapter.data.getOrNull(position + 1)
 
-        if (next?.groupId == null || next.groupId == current.groupId) {
-            onPageScrolled(current.groupId, 0f)
+        if (next?.groupBy == null || next.groupBy == current.groupBy) {
+            onPageScrolled(current.groupNumber, 0f)
             return
         }
 
@@ -170,7 +163,7 @@ class MainFragment : Fragment() {
 //        }
 
 //        if (offset >= 0 && offset <= 1 && position < itemCount) {
-        onPageScrolled(current.groupId, offset)
+        onPageScrolled(current.groupNumber, offset)
 //        }
     }
 

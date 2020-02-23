@@ -14,11 +14,10 @@ import androidx.core.view.doOnPreDraw
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import java.util.*
 
 /** List Model. A sample model that only contains id */
 
-data class ListItemModel(val itemId: Int, val groupId: Int)
+data class ListItemModel(val itemId: Int, val groupNumber: Int, val groupBy: SimpleDate)
 
 class MainListAdapter(context: Context) : RecyclerView.Adapter<MainListAdapter.ListViewHolder>() {
 
@@ -32,11 +31,25 @@ class MainListAdapter(context: Context) : RecyclerView.Adapter<MainListAdapter.L
     private var originalHeight = -1 // will be calculated dynamically
     private var expandedHeight = -1 // will be calculated dynamically
 
-    val data = (0 until 10).flatMap { groupId -> // TODO: nie public
-        val itemCount = 10 // Random.nextInt(1, 10)
-        List(itemCount) { val itemId = groupId * itemCount + it
-            Log.d("matej", "MainListAdapter.null() called [$itemId]")
-            ListItemModel(itemId, groupId) }
+    val data = (0 until 10).flatMap { groupNumber ->
+        // TODO: nie public
+
+        val itemsInGroup = 10 // Random.nextInt(1, 10)
+        val initialOffset = 25
+
+        val day = (initialOffset + groupNumber) % 30 + 1
+        val month = when ((initialOffset + groupNumber) / 30) {
+            0 -> "JAN"
+            1 -> "FEB"
+            2 -> "MAR"
+            3 -> "APR"
+            else -> TODO()
+        }
+
+        List(itemsInGroup) {
+            val itemId = groupNumber * itemsInGroup + it
+            ListItemModel(itemId, groupNumber, SimpleDate(day, month))
+        }
     }
 
     private val listItemExpandDuration: Long get() = (300L).toLong()
@@ -67,7 +80,7 @@ class MainListAdapter(context: Context) : RecyclerView.Adapter<MainListAdapter.L
         expandItem(holder, model == expandedModel, animate = false)
         scaleDownItem(holder, position, isScaledDown)
 
-        val isFirstInGroup = data.getOrNull(position - 1)?.groupId != data[position].groupId
+        val isFirstInGroup = data.getOrNull(position - 1)?.groupBy != data[position].groupBy
         holder.header.visibility = if (isFirstInGroup) View.VISIBLE else View.GONE // TODO: gone
         holder.cardContainer.setOnClickListener {
             if (expandedModel == null) {
@@ -157,7 +170,8 @@ class MainListAdapter(context: Context) : RecyclerView.Adapter<MainListAdapter.L
     fun getScaleDownAnimator(isScaledDown: Boolean): ValueAnimator {
         val lm = recyclerView.layoutManager as LinearLayoutManager
 
-        val animator = getValueAnimator(isScaledDown,
+        val animator = getValueAnimator(
+            isScaledDown,
             duration = 300L, interpolator = AccelerateDecelerateInterpolator()
         ) { progress ->
 
