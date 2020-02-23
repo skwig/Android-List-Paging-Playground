@@ -70,7 +70,7 @@ public class RecyclerViewAttacher implements ScrollingPagerIndicator.PagerAttach
         }
         this.layoutManager = (LinearLayoutManager) pager.getLayoutManager();
         if (layoutManager.getOrientation() != LinearLayoutManager.HORIZONTAL) {
-            throw new IllegalStateException("Only HORIZONTAL orientation is supported");
+//            throw new IllegalStateException("Only HORIZONTAL orientation is supported");
         }
         this.recyclerView = pager;
         this.attachedAdapter = pager.getAdapter();

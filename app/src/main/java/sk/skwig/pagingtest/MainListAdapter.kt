@@ -2,6 +2,7 @@ package sk.skwig.pagingtest
 
 import android.animation.ValueAnimator
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,7 +18,7 @@ import java.util.*
 
 /** List Model. A sample model that only contains id */
 
-data class ListItemModel(val itemId: UUID, val groupId: Int)
+data class ListItemModel(val itemId: Int, val groupId: Int)
 
 class MainListAdapter(context: Context) : RecyclerView.Adapter<MainListAdapter.ListViewHolder>() {
 
@@ -31,9 +32,11 @@ class MainListAdapter(context: Context) : RecyclerView.Adapter<MainListAdapter.L
     private var originalHeight = -1 // will be calculated dynamically
     private var expandedHeight = -1 // will be calculated dynamically
 
-    private val data = (0 until 10).flatMap { groupId ->
+    val data = (0 until 10).flatMap { groupId -> // TODO: nie public
         val itemCount = 10 // Random.nextInt(1, 10)
-        List(itemCount) { ListItemModel(UUID.randomUUID(), groupId) }
+        List(itemCount) { val itemId = groupId * itemCount + it
+            Log.d("matej", "MainListAdapter.null() called [$itemId]")
+            ListItemModel(itemId, groupId) }
     }
 
     private val listItemExpandDuration: Long get() = (300L).toLong()
@@ -60,6 +63,7 @@ class MainListAdapter(context: Context) : RecyclerView.Adapter<MainListAdapter.L
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         val model = data[position]
 
+        holder.root.tag = model.itemId
         expandItem(holder, model == expandedModel, animate = false)
         scaleDownItem(holder, position, isScaledDown)
 
@@ -214,5 +218,6 @@ class MainListAdapter(context: Context) : RecyclerView.Adapter<MainListAdapter.L
         val chevron: View by bindView(R.id.chevron)
         val cardContainer: View by bindView(R.id.card_container)
         val scaleContainer: View by bindView(R.id.scale_container)
+        val root: View by bindView(R.id.root_layout)
     }
 }
